@@ -20,31 +20,30 @@
 #     "no"
 #   end
 public def amount_of_change(coin)
-coin = coin.to_i
 #set values to 0
     quarter = 0
     dime = 0
     nickel = 0
     penny = 0
   #will change the object to a number
-
+  coin = coin.to_i
   # compare input number over 25 will store 1 in quarters var remainder will move down to next if statement
     if (coin > 25)
       quarter = coin / 25
       coin = coin % 25
     end
-      if (coin >= 10)
-        dime = coin / 10
-        coin = coin % 10
-      end
-        if (coin >= 5)
-          nickel = coin / 5
-          coin = coin % 5
-        end
-          if (coin >= 1)
-          penny = coin / 1
-          coin = coin % 1
-        end
+    if (coin >= 10)
+      dime = coin / 10
+      coin = coin % 10
+    end
+    if (coin >= 5)
+      nickel = coin / 5
+      coin = coin % 5
+    end
+      if (coin >= 1)
+      penny = coin / 1
+      coin = coin % 1
+    end
 
     #prints the number of quarter, dimes, nickels and pennies
   print "You will have:
