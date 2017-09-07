@@ -1,7 +1,3 @@
-class String
-class Fixnum
-
-
 # def coin_combo(coin)
 #   # binding.pry
 #   # coins = Hash.new()
@@ -24,17 +20,17 @@ class Fixnum
 #     "no"
 #   end
 public def amount_of_change(coin)
-
+coin = coin.to_i
 #set values to 0
-    quarters = 0
+    quarter = 0
     dime = 0
     nickel = 0
     penny = 0
   #will change the object to a number
-    coin = coin.to_i
+
   # compare input number over 25 will store 1 in quarters var remainder will move down to next if statement
     if (coin > 25)
-      quarters = coin / 25
+      quarter = coin / 25
       coin = coin % 25
     end
       if (coin >= 10)
@@ -49,14 +45,19 @@ public def amount_of_change(coin)
           penny = coin / 1
           coin = coin % 1
         end
+
     #prints the number of quarter, dimes, nickels and pennies
-  print "You will have #{quarters} quarters, #{dime} dimes, #{nickel} nickels, #{penny} pennies\n"
+  print "You will have:
+   #{quarter} quarters,
+   #{dime} dimes,
+   #{nickel} nickels,
+   #{penny} pennies\n"
 end
 
 #front end input
 puts "please enter an amount thats under a dollar."
-amount = gets.chomp
-amount_of_change(amount)
+coin = gets.chomp
+amount_of_change(coin)
 
 
 
