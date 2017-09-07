@@ -1,3 +1,5 @@
+class String
+class Fixnum
 
 
 # def coin_combo(coin)
@@ -21,22 +23,53 @@
 #   else
 #     "no"
 #   end
-  def coin_combo(coin)
+public def amount_of_change(coin)
 
-      if(coin == 25)
-      "quarters"
-    elsif(coin == 10)
-      "dimes"
-    elsif(coin == 5)
-      "nickels"
-    elsif(coin == 1)
-      "pennies"
-    else
-      "no"
+#set values to 0
+    quarters = 0
+    dime = 0
+    nickel = 0
+    penny = 0
+  #will change the object to a number
+    coin = coin.to_i
+  # compare input number over 25 will store 1 in quarters var remainder will move down to next if statement
+    if (coin > 25)
+      quarters = coin / 25
+      coin = coin % 25
     end
+      if (coin >= 10)
+        dime = coin / 10
+        coin = coin % 10
+      end
+        if (coin >= 5)
+          nickel = coin / 5
+          coin = coin % 5
+        end
+          if (coin >= 1)
+          penny = coin / 1
+          coin = coin % 1
+        end
+    #prints the number of quarter, dimes, nickels and pennies
+  print "You will have #{quarters} quarters, #{dime} dimes, #{nickel} nickels, #{penny} pennies\n"
 end
-puts "Enter a number"
-  coin = gets.chomp
 
-result = coin_combo(coin)
-puts result
+#front end input
+puts "please enter an amount thats under a dollar."
+amount = gets.chomp
+amount_of_change(amount)
+
+
+
+
+#       if(coin == 25)
+#       "quarters"
+#     elsif(coin == 10)
+#       "dimes"
+#     elsif(coin == 5)
+#       "nickels"
+#     elsif(coin == 1)
+#       "pennies"
+#     else
+#       "no"
+#     end
+# end
